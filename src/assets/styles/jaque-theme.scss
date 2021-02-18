@@ -1,0 +1,22 @@
+@import "../../app/app.component.scss-theme";
+@import "./jaque-typography";
+
+@mixin app-style-core() {
+  @include mat-ripple();
+  @include cdk-a11y();
+  @include cdk-overlay();
+  @include cdk-text-field();
+
+  @include jaque-typography();
+}
+
+@mixin jaque-theme($theme) {
+  @include mat-core-theme($theme);
+  @include mat-card-theme($theme);
+  @include mat-select-theme($theme);
+  @include mat-form-field-theme($theme);
+  @include mat-slide-toggle-theme($theme);
+  @include mat-toolbar-theme($theme);
+
+  @include app-root-theme($theme);
+}

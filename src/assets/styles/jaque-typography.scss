@@ -1,0 +1,15 @@
+$jaque-typography: mat-typography-config(
+  $font-family: "Open Sans",
+  $title: mat-typography-level(24px, 32px, bold),
+);
+
+@mixin jaque-typography($typography: $jaque-typography) {
+  @include mat-base-typography($typography);
+  @include mat-card-typography($typography);
+  @include mat-select-typography($typography);
+  @include mat-form-field-typography($typography);
+  @include mat-slide-toggle-typography($typography);
+  @include mat-toolbar-typography($typography);
+
+  @include app-root-typography($typography);
+}
