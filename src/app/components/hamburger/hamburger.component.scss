@@ -1,0 +1,56 @@
+.hamburger {
+  display: flex;
+  width: 30px;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  padding: 20px;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  z-index: 9;
+  transition: all 0.5s ease-in-out;
+
+  .hamburger__button {
+    width: 20px;
+    height: 4px;
+    background: #fff;
+    border-radius: 5px;
+    transition: all 0.2s ease-in-out;
+
+    &::before,
+    &::after {
+      content: "";
+      position: absolute;
+      width: 30px;
+      height: 4px;
+      background: #fff;
+      border-radius: 5px;
+      transition: all 0.2s ease-in-out;
+    }
+
+    &::before {
+      transform: translateY(-10px);
+    }
+
+    &::after {
+      width: 10px;
+      transform: translateY(10px);
+    }
+  }
+
+  &.open .hamburger__button {
+    transform: translateX(-50px);
+    background: transparent;
+    box-shadow: none;
+
+    &::before {
+      transform: rotate(45deg) translate(35px, -35px);
+    }
+
+    &::after {
+      width: 30px;
+      transform: rotate(-45deg) translate(35px, 35px);
+    }
+  }
+}
