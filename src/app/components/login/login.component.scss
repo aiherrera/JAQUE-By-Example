@@ -1,0 +1,42 @@
+.login {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  .mat-card {
+    .presentation {
+      display: flex;
+      justify-content: center;
+      width: 100%;
+      div {
+        margin: 0;
+      }
+      img {
+        filter: invert(70%) sepia(6%) saturate(5707%) hue-rotate(176deg)
+          brightness(96%) contrast(84%);
+      }
+      h1 {
+        color: #fa6a00;
+        font-size: 28px;
+        padding: 15px 0 0;
+      }
+    }
+    .mat-card-content {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 30px 20px;
+      max-width: 300px;
+      background-color: transparent;
+      .mat-form-field {
+        width: 100%;
+      }
+      button {
+        width: 30%;
+      }
+      .global-error {
+        padding: 10px 0;
+      }
+    }
+  }
+}

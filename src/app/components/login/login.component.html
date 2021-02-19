@@ -1,0 +1,36 @@
+<div class="login">
+  <mat-card color="primary">
+    <div class="presentation">
+      <img src="assets/logo.svg" width="64" alt="" />
+      <h1>JAQUE</h1>
+    </div>
+
+    <mat-card-content>
+      <div class="form">
+        <form [formGroup]="loginForm" (ngSubmit)="onSubmit()" novalidate>
+          <mat-form-field appearance="outline" required>
+            <mat-label>Email *</mat-label>
+            <input matInput formControlName="email" />
+            <mat-error>Email required</mat-error>
+          </mat-form-field>
+          <mat-form-field appearance="outline" required>
+            <mat-label>Password *</mat-label>
+            <input matInput formControlName="password" />
+            <mat-error>Password required</mat-error>
+          </mat-form-field>
+
+          <mat-error class="global-error">{{ error }}</mat-error>
+
+          <button
+            mat-raised-button
+            color="primary"
+            type="submit"
+            [disabled]="!loginForm.valid"
+          >
+            Login
+          </button>
+        </form>
+      </div>
+    </mat-card-content>
+  </mat-card>
+</div>

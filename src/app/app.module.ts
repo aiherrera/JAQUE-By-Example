@@ -12,6 +12,11 @@ import { ToolbarComponent } from './components/toolbar/toolbar.component';
 import { DarkModeSwitcherComponent } from './components/dark-mode-switcher/dark-mode-switcher.component';
 import { HamburgerComponent } from './components/hamburger/hamburger.component';
 import { SidenavComponent } from './components/sidenav/sidenav.component';
+import { LoginComponent } from './components/login/login.component';
+import { DashboardComponent } from './components/dashboard/dashboard.component';
+import { AngularFireModule } from '@angular/fire';
+import { AngularFireAuthModule } from '@angular/fire/auth';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -20,6 +25,8 @@ import { SidenavComponent } from './components/sidenav/sidenav.component';
     DarkModeSwitcherComponent,
     HamburgerComponent,
     SidenavComponent,
+    LoginComponent,
+    DashboardComponent,
   ],
   imports: [
     BrowserModule,
@@ -27,7 +34,10 @@ import { SidenavComponent } from './components/sidenav/sidenav.component';
     ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production }),
     BrowserAnimationsModule,
     MaterialModule,
-    SharedModule
+    SharedModule,
+    ReactiveFormsModule,
+    AngularFireModule.initializeApp(environment.firebase),
+    AngularFireAuthModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
