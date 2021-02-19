@@ -1,19 +1,28 @@
 app-toolbar {
   display: flex;
-  justify-content: space-between;
-  span {
-    position: absolute;
+  justify-content: space-around;
+  div {
     &:first-child {
-      top: 1.1em;
+      span {
+        position: absolute;
+        &:first-child {
+          top: 0.9em;
+        }
+        &:last-child {
+          top: 0.35em;
+          left: 71px;
+        }
+      }
+      img {
+        position: absolute;
+        top: 0.5em;
+        left: 36px;
+      }
     }
     &:last-child {
-      top: 0.5em;
-      left: 71px;
+      display: flex;
+      justify-content: space-between;
+      width: 200px;
     }
-  }
-  img {
-    position: absolute;
-    top: 0.57em;
-    left: 36px;
   }
 }

@@ -1,3 +1,8 @@
-<mat-slide-toggle [checked]="isDarkMode" (change)="onDarkModeSwitched($event)"
-  >Dark mode
-</mat-slide-toggle>
+<div class="dark-switcher">
+  <label>go dark</label>
+  <mat-slide-toggle
+    [checked]="isDarkMode"
+    (change)="onDarkModeSwitched($event)"
+  >
+  </mat-slide-toggle>
+</div>

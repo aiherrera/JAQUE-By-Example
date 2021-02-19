@@ -1,7 +1,5 @@
-import { state, style } from '@angular/animations';
 import { DOCUMENT } from '@angular/common';
-import { Component, ElementRef, Inject, Input, OnInit } from '@angular/core';
-import { BehaviorSubject, Subject } from 'rxjs';
+import { Component, Inject, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-hamburger',
