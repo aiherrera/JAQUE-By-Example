@@ -38,5 +38,10 @@ app-sidenav {
       font-size: 32px;
       cursor: pointer;
     }
+    &:last-child {
+      app-list-users {
+        width: 100%;
+      }
+    }
   }
 }
