@@ -11,13 +11,15 @@ import { AppComponent } from './app.component';
 import { ToolbarComponent } from './components/toolbar/toolbar.component';
 import { DarkModeSwitcherComponent } from './components/dark-mode-switcher/dark-mode-switcher.component';
 import { HamburgerComponent } from './components/hamburger/hamburger.component';
+import { SidenavComponent } from './components/sidenav/sidenav.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     ToolbarComponent,
     DarkModeSwitcherComponent,
-    HamburgerComponent
+    HamburgerComponent,
+    SidenavComponent,
   ],
   imports: [
     BrowserModule,

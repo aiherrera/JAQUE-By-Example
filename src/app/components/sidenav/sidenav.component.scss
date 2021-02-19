@@ -1,0 +1,12 @@
+.mat-sidenav-container {
+  position: sticky;
+  top: 56px;
+  left: 0;
+  height: calc(100vh - 64px);
+  .mat-sidenav {
+    background-color: #fff;
+    width: 50%;
+    max-width: 300px;
+    padding: 20px;
+  }
+}
