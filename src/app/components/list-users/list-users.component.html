@@ -1,4 +1,11 @@
-<div class="container">
+<div
+  class="container"
+  matTooltip="Displays user list"
+  matTooltipPosition="above"
+>
+  <h1>User list</h1>
+  <p>Below is displayed a list with all the users</p>
+
   <mat-table class="w-100" [dataSource]="datasource" class="mat-elevation-z8">
     <!-- Name Column -->
     <ng-container matColumnDef="firstName">
@@ -36,9 +43,15 @@
     <mat-row *matRowDef="let row; columns: displayedColumns"></mat-row>
   </mat-table>
 
+  <mat-card *ngIf="isLoading" style="display: flex; place-content: center">
+    <mat-progress-spinner color="primary" mode="indeterminate">
+    </mat-progress-spinner>
+  </mat-card>
+
   <mat-paginator
+    class="mat-elevation-z8"
     [length]="users.length"
     [pageSize]="5"
-    (page)="pageEvent = $event"
+    showFirstLastButtons
   ></mat-paginator>
 </div>

@@ -1,6 +1,7 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { MatPaginator, PageEvent } from '@angular/material/paginator';
 import { MatTableDataSource } from '@angular/material/table';
+import { finalize } from 'rxjs/operators';
 import { User } from 'src/app/interfaces/user';
 import { ListUsersService } from './list-users.service';
 
@@ -16,7 +17,7 @@ export class ListUsersComponent implements OnInit {
   @ViewChild(MatPaginator, { static: true }) paginator!: MatPaginator;
 
   users: User[] = []
-  pageEvent!: PageEvent;
+  isLoading: boolean = false
 
   constructor(
     private usersService: ListUsersService
@@ -27,7 +28,9 @@ export class ListUsersComponent implements OnInit {
   }
 
   onListUsers(): void {
-    this.usersService.getListUsers().subscribe((users: User[]) => {
+    this.isLoading = true
+
+    this.usersService.getListUsers().pipe(finalize(() => this.isLoading = false)).subscribe((users: User[]) => {
       this.datasource.data = [...users]
       this.datasource.paginator = this.paginator
     })

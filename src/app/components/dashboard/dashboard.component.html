@@ -1,5 +1,5 @@
 <app-toolbar>
-  <div logo>
+  <div logo routerLink="/">
     <span>JA</span>
     <img src="./assets/logo.svg" width="40" alt="" />
     <span>UE</span>
@@ -9,17 +9,46 @@
     <app-dark-mode-switcher
       (darkModeSwitched)="onSwitchMode($event)"
       [isDarkMode]="isDarkMode"
+      [matTooltip]="isDarkMode ? 'go light' : 'go dark'"
     ></app-dark-mode-switcher>
-    <app-hamburger (click)="onToggle()"></app-hamburger>
+    <app-hamburger (click)="onToggle()" matTooltip="Menu"></app-hamburger>
   </div>
 </app-toolbar>
 
 <app-sidenav>
-  <div menu>
-    <div class="profile"></div>
-    <mat-icon (click)="onSignOut()">logout</mat-icon>
+  <div class="menu" menu>
+    <div class="header">
+      <div class="profile">
+        <mat-icon>face</mat-icon>
+        <mat-icon (click)="onSignOut()" matTooltip="Logout">logout</mat-icon>
+      </div>
+
+      <mat-selection-list #shoes [multiple]="false">
+        <mat-list-option
+          routerLink="/dashboard"
+          matTooltip="Displays user list"
+        >
+          User list
+        </mat-list-option>
+        <mat-list-option matTooltip="Displays lineal graphic">
+          Lineal graphic
+        </mat-list-option>
+      </mat-selection-list>
+    </div>
+
+    <span>
+      Created by:
+      <a
+        class="mat-primary"
+        href="https://aiherrera.com"
+        rel="noreferer"
+        target="_blank"
+      >
+        &nbsp; Alain Iglesias &copy; 2021
+      </a>
+    </span>
   </div>
-  <div content>
+  <div class="content" content>
     <app-list-users></app-list-users>
   </div>
 </app-sidenav>

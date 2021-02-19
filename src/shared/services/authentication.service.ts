@@ -20,7 +20,15 @@ export class AuthenticationService {
    */
   signIn(userAuth: UserAuth): Promise<void> {
     return this.fireAuth.signInWithEmailAndPassword(userAuth.email, userAuth.password)
-      .then(res => {
+      .then(async () => {
+        const firebaseUser = await this.fireAuth.currentUser
+        const user = {
+          name: firebaseUser?.displayName,
+          email: firebaseUser?.email,
+          photo: firebaseUser?.photoURL
+        }
+        this.setUserData(user)
+
         this.ngZone.run(() => {
           this.router.navigate(['dashboard'])
         })
@@ -37,5 +45,20 @@ export class AuthenticationService {
       localStorage.removeItem('user')
       this.router.navigate(['log-in'])
     })
+  }
+
+  /**
+   * Wether or not the user is authenticated in the app
+   */
+  isLoggedIn(): boolean {
+    return localStorage.getItem('user') !== null
+  }
+
+  /**
+   * Stores the info of the authenticated user
+   * @param user authenticated user
+   */
+  setUserData(user: any): void {
+    localStorage.setItem('user', JSON.stringify(user))
   }
 }
