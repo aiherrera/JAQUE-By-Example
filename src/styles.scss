@@ -1,12 +1,12 @@
 @import "~@angular/material/theming";
+@include mat-core();
 
 @import "./assets/styles/jaque-color-palette";
 @import "./assets/styles/jaque-theme";
-
-$mat-light-theme: mat-light-theme($app-primary, $app-accent, $app-warn);
-$mat-dark-theme: mat-dark-theme($app-primary, $app-accent, $app-warn);
-
 @include app-style-core();
+
+$mat-light-theme: mat-light-theme($light-primary, $light-accent, $light-warn);
+$mat-dark-theme: mat-dark-theme($dark-primary, $dark-accent, $dark-warn);
 
 html,
 body {
@@ -15,7 +15,12 @@ body {
 body {
   margin: 0;
   padding: 0;
-  background-color: #ebebeb;
+  background: linear-gradient(90deg, #394762, #1c2531);
+}
+
+.mat-error {
+  color: #ed5a68;
+  padding: 0 0 10px;
 }
 
 .theme-dark {

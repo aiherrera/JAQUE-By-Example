@@ -1,4 +1,3 @@
-@import "../../app/app.component.scss-theme";
 @import "./jaque-typography";
 
 @mixin app-style-core() {
@@ -18,5 +17,5 @@
   @include mat-slide-toggle-theme($theme);
   @include mat-toolbar-theme($theme);
 
-  @include app-root-theme($theme);
+  @include angular-material-theme($theme);
 }

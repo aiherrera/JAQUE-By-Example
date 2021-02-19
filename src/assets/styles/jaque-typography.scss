@@ -10,6 +10,4 @@ $jaque-typography: mat-typography-config(
   @include mat-form-field-typography($typography);
   @include mat-slide-toggle-typography($typography);
   @include mat-toolbar-typography($typography);
-
-  @include app-root-typography($typography);
 }
