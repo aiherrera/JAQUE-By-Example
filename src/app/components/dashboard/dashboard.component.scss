@@ -1,0 +1,42 @@
+app-toolbar {
+  display: flex;
+  justify-content: space-around;
+  div {
+    &:first-child {
+      span {
+        position: absolute;
+        &:first-child {
+          top: 0.9em;
+        }
+        &:last-child {
+          top: 0.35em;
+          left: 71px;
+        }
+      }
+      img {
+        position: absolute;
+        top: 0.5em;
+        left: 36px;
+      }
+    }
+    &:last-child {
+      display: flex;
+      justify-content: space-between;
+      width: 200px;
+    }
+  }
+}
+
+app-sidenav {
+  div {
+    &:first-child {
+      display: flex;
+      justify-content: space-between;
+      padding: 20px 30px;
+    }
+    .mat-icon {
+      font-size: 32px;
+      cursor: pointer;
+    }
+  }
+}
