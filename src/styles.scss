@@ -18,11 +18,6 @@ body {
   background: linear-gradient(90deg, #394762, #1c2531);
 }
 
-.mat-error {
-  color: #ed5a68;
-  padding: 0 0 10px;
-}
-
 .theme-dark {
   @include jaque-theme($mat-dark-theme);
 }

@@ -1,17 +1,1 @@
-<app-toolbar>
-  <div logo>
-    <span>JA</span>
-    <img src="./assets/logo.svg" width="40" alt="" />
-    <span>UE</span>
-  </div>
-
-  <div tools>
-    <app-dark-mode-switcher
-      (darkModeSwitched)="switchMode($event)"
-      [isDarkMode]="isDarkMode"
-    ></app-dark-mode-switcher>
-    <app-hamburger (click)="toggle()"></app-hamburger>
-  </div>
-</app-toolbar>
-
-<app-sidenav></app-sidenav>
+<router-outlet></router-outlet>
