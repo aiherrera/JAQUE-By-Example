@@ -30,7 +30,7 @@ export class AuthenticationService {
         this.setUserData(user)
 
         this.ngZone.run(() => {
-          this.router.navigate(['dashboard'])
+          this.router.navigate(['dashboard/list-users'])
         })
       }).catch(err => {
         throw err
