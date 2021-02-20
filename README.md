@@ -1,6 +1,8 @@
-# JAQUEEval
+# JAQUE by Example
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 11.2.1.
+
+## [Live Demo](https://jaqueeval-3c3c6.web.app/)
 
 ## Development server
 
