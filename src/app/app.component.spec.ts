@@ -1,3 +1,4 @@
+import { ApplicationRef, Renderer2 } from '@angular/core';
 import { TestBed } from '@angular/core/testing';
 import { RouterTestingModule } from '@angular/router/testing';
 import { AppComponent } from './app.component';
@@ -6,11 +7,12 @@ describe('AppComponent', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       imports: [
-        RouterTestingModule
+        RouterTestingModule,
       ],
       declarations: [
         AppComponent
       ],
+      providers: [Renderer2]
     }).compileComponents();
   });
 
@@ -20,16 +22,11 @@ describe('AppComponent', () => {
     expect(app).toBeTruthy();
   });
 
-  it(`should have as title 'JAQUEEval'`, () => {
+  it(`should have a theme named theme`, () => {
     const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.componentInstance;
-    expect(app.title).toEqual('JAQUEEval');
-  });
+    const stubTheme = 'theme-light'
 
-  it('should render title', () => {
-    const fixture = TestBed.createComponent(AppComponent);
-    fixture.detectChanges();
-    const compiled = fixture.nativeElement;
-    expect(compiled.querySelector('.content span').textContent).toContain('JAQUEEval app is running!');
+    expect(app.currentTheme).toBe(stubTheme);
   });
 });
