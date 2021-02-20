@@ -1,4 +1,4 @@
-# JAQUE by Example
+# JAQUE by Example v.1.0.0
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 11.2.1.
 
