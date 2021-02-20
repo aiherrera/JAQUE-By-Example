@@ -1,0 +1,19 @@
+<h1>Car list by brand</h1>
+<p>Below is displayed a list with all the cars sold in 2020</p>
+
+<!-- <fusioncharts [chartConfig]="chartConfig" [dataSource]="dataSource">
+</fusioncharts> -->
+
+<div class="chart-wrapper">
+  <canvas
+    baseChart
+    [datasets]="barChartData"
+    [labels]="barChartLabels"
+    [colors]="barChartColors"
+    [options]="barChartOptions"
+    [plugins]="barChartPlugins"
+    [legend]="barChartLegend"
+    [chartType]="barChartType"
+  >
+  </canvas>
+</div>

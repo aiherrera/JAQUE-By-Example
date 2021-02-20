@@ -30,7 +30,10 @@
         >
           User list
         </mat-list-option>
-        <mat-list-option matTooltip="Displays lineal graphic">
+        <mat-list-option
+          routerLink="/dashboard/lineal-graphic"
+          matTooltip="Displays lineal graphic"
+        >
           Lineal graphic
         </mat-list-option>
       </mat-selection-list>
@@ -49,6 +52,6 @@
     </span>
   </div>
   <div class="content" content>
-    <app-list-users></app-list-users>
+    <router-outlet name="dashboard"></router-outlet>
   </div>
 </app-sidenav>

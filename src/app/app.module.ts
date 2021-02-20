@@ -13,7 +13,6 @@ import { AngularFireModule } from '@angular/fire';
 import { AngularFireAuthModule } from '@angular/fire/auth';
 import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
-import { DashboardModule } from './components/dashboard/dashboard.module';
 
 @NgModule({
   declarations: [
@@ -31,7 +30,6 @@ import { DashboardModule } from './components/dashboard/dashboard.module';
     ReactiveFormsModule,
     AngularFireModule.initializeApp(environment.firebase),
     AngularFireAuthModule,
-    DashboardModule
   ],
   providers: [],
   bootstrap: [AppComponent],
